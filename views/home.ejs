@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bonafide Certificate</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class=" ps-3 navbar-brand" href="#">Student Portal</a>
+        <ul class="navbar-nav">
+          <form method="post" action="/logout" >
+            <input type="submit" value="Logout">
+          </form>
+        </ul>
+      </div>
+    </nav>
+    <div class="center">
+      <%= user %>
+      <div class = "forms">
+        <h1>Bonafide Certificate</h1>
+        <button onclick="myFunctionBona()">Select</button>
+      </div>
+
+      <div class = "forms">
+        <h1>Leave form</h1>
+        <button onclick="myFunctionLeave()">Select</button> 
+      </div>
+
+      <div class = "forms">
+        <h1>OD letter</h1>
+        <button onclick="myFunctionOD()">Select</button> 
+      </div>
+
+    </div>
+    <script>
+      function myFunctionBona() {
+        window.location.href="/bonafide";
+      }
+      function myFunctionLeave() {
+        window.location.href="/leave";
+      }
+      function myFunctionOD() {
+        window.location.href="/od";
+      }
+    </script>   
+  </body>
+</html>

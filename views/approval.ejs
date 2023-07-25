@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-icons.css">
+      <link rel="stylesheet" href="css/admin-style.css">
+      
+
+      <title>Staff Approval</title>
+   </head>
+   <body>
+      <header class="navbar navbar-expand-lg navbar-light">
+         <div class="container-fluid">
+            <a class="navbar-brand text-white ml-4" href="/admin/"><b>Requests</b></a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+               <div class="mr-5">
+                  <ul class="navbar-nav mr-auto mr-0">
+                     <li class="nav-item">
+                        <form method="post" action="/logout" >
+                           <input type="submit" value="Logout">
+                        </form>
+                        <!-- <a class="nav-link text-white" href=""> Logout</a> -->
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            
+            <div class="col-lg-10">
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+               <h1>All Request</h1>
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Register Number</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Type</th>
+                        <th>Reason</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Number of Days</th>
+                        <th> </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <% appro.forEach(request => { %>
+                     <tr>
+                        <td><%= request.StudentRegNo %></td>
+                        <td><%= request.StudentName %></td>
+                        <td><%= request.StudentEmail %></td>
+                        <td><%= request.Type %></td>
+                        <td><%= request.Reason %></td>
+                        <td><%= request.FromDate %></td>
+                        <td><%= request.ToDate %></td>
+                        <td><%= request.NoOfDays %></td>
+                        <td>                   
+                           
+                              <!-- action="/delete/raj k?_method=DELETE" -->
+                              <!-- <form style="display: inline;" action="/updateTutorApproval" method="POST">
+                                 <input type="hidden" name="reqno" value=<%= request._id %>>
+                                 <input id="app" type="hidden" name="approval" value="deny">
+                              <button onclick="document.getElementById('app').value='approve'" style="cursor: pointer;" type="submit" class="btn btn-primary">Approve</button>
+                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Reject</button>
+                           </form> -->
+                           <form style="display: inline;" action="/updateTutorApproval" method="POST">
+                              <input type="hidden" name="reqno" value=<%= request._id %>>
+                              <input id="app_<%= request._id %>" type="hidden" name="approval" value="deny">
+                              <button onclick="document.getElementById('app_<%= request._id %>').value='approve'" style="cursor: pointer;" type="submit" class="btn btn-primary">Approve</button>
+                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Reject</button>
+                            </form>
+                        </td>
+                     </tr>
+                     <% }); %>
+                  </tbody>
+               </table>
+                 
+
+                 <!-- <center> <br> <a class="btn btn-success btn-md" href="/admin/pages/add-pages/">Add More Pages</a> </center> -->
+       
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="js/datatables.min.css"/>
+      <script type="text/javascript" src="js/datatables.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+             $('#dataTable').DataTable();
+              rowReorder: true
+           });
+         
+      </script>
+   </body>
+</html>

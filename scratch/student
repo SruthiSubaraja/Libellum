@@ -1,0 +1,15 @@
+{
+  _id: new ObjectId("642fba6d82135b51d03a8a1b"),
+  Id: '2001219',
+  Name: 'SHESHAN S',
+  Dept: 'CSE',
+  Year: '3',
+  Email: 'sheshan.2001219@srec.ac.in',
+  PhoneNo: '6374189663',
+  TutorId: '2142',
+  AcId: '456',
+  HodId: '450',
+  PrincyId: '6942005',
+  password: 'srec@123',
+  role: 'student'
+}

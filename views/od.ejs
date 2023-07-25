@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/styleBonafide.css">
+     
+    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>OD form</header>
+        <form method="post" action="/addODRequest">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Details</span>
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label>Register number</label>
+                            <input type="number" name = "RegNo" placeholder="Enter register number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" name = "FullName" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" name="mobNo" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Department</label>
+                            <input type="text" name= "dept" placeholder="Enter your Department" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Year</label>
+                            <input type="text" name="year" placeholder="Enter year" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details ID">
+
+                    <div class="fields">
+                       
+                        <div class="input-field">
+                            <label>Reason for OD</label>
+                            <select name="reason" required>
+                                <option disabled selected>Select </option>
+                                <option>Internship</option>
+                                <option>Events</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>From Date</label>
+                            <input type="date" name="Fromdate" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>To Date</label>
+                            <input type="date" name="Todate" required>
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Submit</span>
+                    </button>
+
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
